@@ -1,5 +1,5 @@
 # Demos_flutter
 #### Flutter Demos
 
-* basic ui
-* funtion example
+* widget example
+* third part lib example
