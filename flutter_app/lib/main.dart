@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yc/button/raised_button_demo.dart';
+import 'package:yc/list/list_demo.dart';
+import 'package:english_words/english_words.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -49,6 +52,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final wordPair = WordPair.random();
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -82,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Weclome to Codelabs',
+              'Weclome to Codelabs. ' + wordPair.asPascalCase,
             ),
             RaisedButton(
               child: Text('Raise button'),
@@ -101,6 +105,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('list'),
               onPressed: () {
                 print('click list button');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ListDemo()));
               },
               textColor: Colors.greenAccent,
               color: Colors.grey,
