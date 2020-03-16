@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yc/button/raised_button_demo.dart';
-import 'package:yc/list/list_demo.dart';
+import 'package:yc/list/list_builder.dart';
 import 'package:english_words/english_words.dart';
+import 'package:yc/list/list_main.dart';
 
 
 void main() {
@@ -106,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 print('click list button');
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ListDemo()));
+                    MaterialPageRoute(builder: (context) => ListDemoMain()));
               },
               textColor: Colors.greenAccent,
               color: Colors.grey,
