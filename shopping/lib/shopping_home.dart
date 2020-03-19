@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'product/product.dart';
+import 'product/product_repo.dart';
+import 'supplement/asymmetric_view.dart';
+
 class ShoppingHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -36,12 +40,13 @@ class ShoppingHome extends StatelessWidget {
           ),
         ],
       ),
-      body: GridView.count(
-          crossAxisCount: 2,
-          padding: EdgeInsets.all(16.0),
-          childAspectRatio: 8.0 / 9.0,
-          children: _buildGridCards(16)),
+//      body: GridView.count(
+//          crossAxisCount: 2,
+//          padding: EdgeInsets.all(16.0),
+//          childAspectRatio: 8.0 / 9.0,
+//          children: _buildGridCards(16)),
       resizeToAvoidBottomInset: false,
+      body: AsymmetricView(products: ProductsRepository.loadProducts(Category.all)),
     );
   }
 
@@ -50,6 +55,7 @@ class ShoppingHome extends StatelessWidget {
       count,
       (int index) => Card(
         clipBehavior: Clip.antiAlias,
+        elevation: 0.0,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -60,7 +66,8 @@ class ShoppingHome extends StatelessWidget {
             Padding(
               padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text('Title'),
                   SizedBox(height: 8.0),
