@@ -5,49 +5,56 @@ import 'product/product_repo.dart';
 import 'supplement/asymmetric_view.dart';
 
 class ShoppingHome extends StatelessWidget {
+  final Category category;
+  const ShoppingHome({this.category: Category.all});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.menu,
-            semanticLabel: 'menu',
-          ),
-          onPressed: () {
-            print('Menu button');
-          },
-        ),
-        title: Text('Home Page'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              semanticLabel: 'search',
-            ),
-            onPressed: () {
-              print('Search button');
-            },
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.tune,
-              semanticLabel: 'filter',
-            ),
-            onPressed: () {
-              print('Filter button');
-            },
-          ),
-        ],
-      ),
+//    return Scaffold(
+//      appBar: AppBar(
+//        leading: IconButton(
+//          icon: Icon(
+//            Icons.menu,
+//            semanticLabel: 'menu',
+//          ),
+//          onPressed: () {
+//            print('Menu button');
+//          },
+//        ),
+//        title: Text('Home Page'),
+//        actions: <Widget>[
+//          IconButton(
+//            icon: Icon(
+//              Icons.search,
+//              semanticLabel: 'search',
+//            ),
+//            onPressed: () {
+//              print('Search button');
+//            },
+//          ),
+//          IconButton(
+//            icon: Icon(
+//              Icons.tune,
+//              semanticLabel: 'filter',
+//            ),
+//            onPressed: () {
+//              print('Filter button');
+//            },
+//          ),
+//        ],
+//      ),
+
 //      body: GridView.count(
 //          crossAxisCount: 2,
 //          padding: EdgeInsets.all(16.0),
 //          childAspectRatio: 8.0 / 9.0,
 //          children: _buildGridCards(16)),
-      resizeToAvoidBottomInset: false,
-      body: AsymmetricView(products: ProductsRepository.loadProducts(Category.all)),
-    );
+//      resizeToAvoidBottomInset: false,
+//      body: AsymmetricView(
+//          products: ProductsRepository.loadProducts(Category.all)),
+//    );
+
+     return AsymmetricView(
+          products: ProductsRepository.loadProducts(category));
   }
 
   List<Card> _buildGridCards(int count) {
