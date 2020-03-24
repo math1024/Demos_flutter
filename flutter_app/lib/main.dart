@@ -113,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25),
               ),
-            )
+            ),
           ],
         ),
       ),
