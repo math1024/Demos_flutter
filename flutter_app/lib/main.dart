@@ -1,6 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:yc/button/raised_button_demo.dart';
+import 'package:yc/charts/syncfusion_chart.dart';
 import 'package:yc/list/list_main.dart';
 
 
@@ -107,6 +108,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 print('click list button');
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ListDemoMain()));
+              },
+              textColor: Colors.greenAccent,
+              color: Colors.grey,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+            ),
+            RaisedButton(
+              child: Text('syncfusion flutter charts'),
+              onPressed: () {
+                print('click syncfusion flutter chart button');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SyncFusionChart()));
               },
               textColor: Colors.greenAccent,
               color: Colors.grey,
