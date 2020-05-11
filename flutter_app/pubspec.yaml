@@ -27,6 +27,8 @@ dependencies:
   english_words: ^3.1.0
   # chart lib 
   syncfusion_flutter_charts: ^18.1.48
+  # google chart lib
+  charts_flutter: ^0.9.0
 
 dev_dependencies:
   flutter_test:
