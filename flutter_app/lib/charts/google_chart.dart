@@ -23,8 +23,7 @@ class GoogleChart extends StatelessWidget {
       body: Center(
         child:   charts.BarChart(
         seriesList,
-           animate: animate,)
-       ,        
+           animate: animate,),      
       ),
     );
   }
