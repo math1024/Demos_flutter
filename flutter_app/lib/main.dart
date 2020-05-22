@@ -1,13 +1,15 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:yc/button/raised_button_demo.dart';
 import 'package:yc/charts/google_chart.dart';
 import 'package:yc/charts/syncfusion_chart.dart';
+import 'package:yc/date/date_time_page.dart';
 import 'package:yc/list/list_main.dart';
 import 'package:yc/text/text_sets.dart';
 
-
 void main() {
+  debugPaintSizeEnabled = !true;
   runApp(MyApp());
 }
 
@@ -68,16 +70,18 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
         actions: [
-          IconButton( icon: const Icon(Icons.add),
-                tooltip: 'Show',
-                onPressed: () {
-                  debugPrint('action button');
-                }),
-                IconButton( icon: const Icon(Icons.add_alert),
-                tooltip: 'Show',
-                onPressed: () {
-                  debugPrint('action button');
-                }),
+          IconButton(
+              icon: const Icon(Icons.add),
+              tooltip: 'Show',
+              onPressed: () {
+                debugPrint('action button');
+              }),
+          IconButton(
+              icon: const Icon(Icons.add_alert),
+              tooltip: 'Show',
+              onPressed: () {
+                debugPrint('action button');
+              }),
         ],
       ),
       body: Center(
@@ -107,8 +111,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Raise button'),
               onPressed: () {
                 print('click raise button');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => RaisedButtonSets()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => RaisedButtonSets()));
               },
               textColor: Colors.greenAccent,
               color: Colors.grey,
@@ -142,12 +148,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(25),
               ),
             ),
-              RaisedButton(
+            RaisedButton(
               child: Text('goolge offical charts'),
               onPressed: () {
                 print('click goolge offical charts button');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => GoogleChart.withSampleData()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => GoogleChart.withSampleData()));
               },
               textColor: Colors.greenAccent,
               color: Colors.grey,
@@ -155,12 +163,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(25),
               ),
             ),
-             RaisedButton(
+            RaisedButton(
               child: Text('Text Set'),
               onPressed: () {
                 print('click Text Set button');
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => TextSets()));
+              },
+              textColor: Colors.greenAccent,
+              color: Colors.grey,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+            ),
+            RaisedButton(
+              child: Text('Date Time Picker'),
+              onPressed: () {
+                print('click Date Time Picker button');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => DateAndTimerPicker()));
               },
               textColor: Colors.greenAccent,
               color: Colors.grey,
