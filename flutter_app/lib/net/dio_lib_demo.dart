@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:yc/net/dio_lib_progress.dart';
 
 class DioLibDemo extends StatelessWidget {
   @override
@@ -65,7 +66,13 @@ class _DioLibState extends State<DioLibStatefulwidget> {
               });
             },
             child: Text('Dio Requst III option')),
-        Text('Result:$_result3')
+        Text('Result:$_result3'),
+        RaisedButton(
+            onPressed: () {
+               Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => DioLibProgress()));
+            },
+            child: Text('Dio Requst IV list'))
       ]
     );
   }
