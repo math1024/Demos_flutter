@@ -13,10 +13,10 @@ class DateAndTimerPicker extends StatelessWidget {
               onPressed: () {
                 showDatePicker(
                   context: context,
-                  initialDate: new DateTime.now(),
+                  initialDate: DateTime.now(),
                   firstDate:
-                      new DateTime.now().subtract(new Duration(days: 30)),
-                  lastDate: new DateTime.now().add(new Duration(days: 30)),
+                      DateTime.now().subtract(Duration(days: 30)),
+                  lastDate: DateTime.now().add(Duration(days: 30)),
                 ).then((DateTime val) {
                   print(val);
                 }).catchError((err) {
@@ -29,7 +29,7 @@ class DateAndTimerPicker extends StatelessWidget {
                 onPressed: () {
                   showTimePicker(
                     context: context,
-                    initialTime: new TimeOfDay.now(),
+                    initialTime: TimeOfDay.now(),
                   ).then((val) {
                     print(val);
                   }).catchError((err) {

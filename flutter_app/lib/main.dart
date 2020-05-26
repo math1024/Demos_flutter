@@ -6,6 +6,7 @@ import 'package:yc/charts/google_chart.dart';
 import 'package:yc/charts/syncfusion_chart.dart';
 import 'package:yc/date/date_time_page.dart';
 import 'package:yc/list/list_main.dart';
+import 'package:yc/net/dio_lib_demo.dart';
 import 'package:yc/text/text_sets.dart';
 
 void main() {
@@ -185,6 +186,19 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               textColor: Colors.greenAccent,
               color: Colors.grey,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+            ),
+            RaisedButton(
+              child: Text('Dio Demo'),
+              onPressed: () {
+                print('click Dio Demo button');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => DioLibDemo()));
+              },
+              textColor: Colors.greenAccent,
+              color: Colors.orange,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25),
               ),
