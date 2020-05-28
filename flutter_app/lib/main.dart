@@ -5,6 +5,7 @@ import 'package:yc/button/raised_button_demo.dart';
 import 'package:yc/charts/google_chart.dart';
 import 'package:yc/charts/syncfusion_chart.dart';
 import 'package:yc/date/date_time_page.dart';
+import 'package:yc/jsonconvert/json_convert_demo.dart';
 import 'package:yc/list/list_main.dart';
 import 'package:yc/net/dio_lib_demo.dart';
 import 'package:yc/text/text_sets.dart';
@@ -196,6 +197,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 print('click Dio Demo button');
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => DioLibDemo()));
+              },
+              textColor: Colors.greenAccent,
+              color: Colors.orange,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+            ),
+            RaisedButton(
+              child: Text('Json Convert Demo'),
+              onPressed: () {
+                print('click Json Convert Demo button');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => JsonConvertDemo()));
               },
               textColor: Colors.greenAccent,
               color: Colors.orange,
