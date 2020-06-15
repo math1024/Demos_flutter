@@ -31,6 +31,8 @@ dependencies:
   charts_flutter: ^0.9.0
   # http wrapper
   dio: 3.0.9
+  # toast
+  fluttertoast: ^4.0.1
 
 dev_dependencies:
   flutter_test:

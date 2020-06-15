@@ -6,9 +6,11 @@ import 'package:yc/charts/google_chart.dart';
 import 'package:yc/charts/syncfusion_chart.dart';
 import 'package:yc/date/date_time_page.dart';
 import 'package:yc/jsonconvert/json_convert_demo.dart';
+import 'package:yc/keyboard/keyboard_event.dart';
 import 'package:yc/list/list_main.dart';
 import 'package:yc/net/dio_lib_demo.dart';
 import 'package:yc/text/text_sets.dart';
+import 'package:yc/toast/toast_demo.dart';
 
 void main() {
   debugPaintSizeEnabled = !true;
@@ -210,6 +212,32 @@ class _MyHomePageState extends State<MyHomePage> {
                 print('click Json Convert Demo button');
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => JsonConvertDemo()));
+              },
+              textColor: Colors.greenAccent,
+              color: Colors.orange,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+            ),
+            RaisedButton(
+              child: Text('Keyboard Event Demo'),
+              onPressed: () {
+                print('click Keyboard Event Demo button');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => KeyboardEventDemo()));
+              },
+              textColor: Colors.greenAccent,
+              color: Colors.orange,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+            ),
+            RaisedButton(
+              child: Text('Toast Demo'),
+              onPressed: () {
+                print('click Toast Demo button');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ToastDemo()));
               },
               textColor: Colors.greenAccent,
               color: Colors.orange,
