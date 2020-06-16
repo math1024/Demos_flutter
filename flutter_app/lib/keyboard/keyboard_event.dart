@@ -12,12 +12,20 @@ class KeyboardEventDemo extends StatelessWidget {
             TextField(
               keyboardType: TextInputType.text,
               textInputAction: TextInputAction.newline,
+              decoration: InputDecoration(
+                labelText: 'newLine',
+                  contentPadding: EdgeInsets.all(10.0)
+              ),
               onSubmitted: (value) {
                 print(value);
               },
             ),
             TextField(
               keyboardType: TextInputType.text,
+              decoration: InputDecoration(
+                labelText: '下一项',
+                contentPadding: EdgeInsets.all(10.0)
+              ),
               textInputAction: TextInputAction.next,
               onSubmitted: (value) {
                  FocusScope.of(context).requestFocus(new FocusNode());
