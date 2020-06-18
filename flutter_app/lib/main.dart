@@ -9,8 +9,11 @@ import 'package:yc/jsonconvert/json_convert_demo.dart';
 import 'package:yc/keyboard/keyboard_event.dart';
 import 'package:yc/list/list_main.dart';
 import 'package:yc/net/dio_lib_demo.dart';
+import 'package:yc/redux/redux_demo.dart';
+import 'package:yc/redux/redux_state.dart';
 import 'package:yc/text/text_sets.dart';
 import 'package:yc/toast/toast_demo.dart';
+import 'package:redux/redux.dart';
 
 void main() {
   debugPaintSizeEnabled = !true;
@@ -228,6 +231,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(25),
               ),
             ),
+            FlatButton(onPressed: (){
+                print('click Redux Demo button');
+                final store = Store<ReduxState>(getReduce,initialState: ReduxState.initState());
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ReduxDemo(store)));
+            }, 
+              textColor: Colors.lightBlue,
+              child: Text('Redux Demo'))
           ],
         ),
     );
