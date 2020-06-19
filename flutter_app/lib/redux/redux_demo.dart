@@ -16,7 +16,7 @@ class ReduxDemo extends StatelessWidget {
         child: StoreBuilder<ReduxState>(
             builder: (BuildContext context, Store<ReduxState> store) {
           return MaterialApp(
-            title: 'ReduxDemo',
+            title: 'ReduxDemo1',
             theme: new ThemeData(
               primarySwatch: Colors.blue,
             ),
@@ -67,7 +67,7 @@ class FirstPageState extends State<FirstPage> {
                     return NextPageTwo();
                   }));
                 },
-                child: Text("go next II"))
+                child: Text("go next II")),
           ],
         )),
       );

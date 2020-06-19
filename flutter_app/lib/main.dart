@@ -8,6 +8,7 @@ import 'package:yc/date/date_time_page.dart';
 import 'package:yc/jsonconvert/json_convert_demo.dart';
 import 'package:yc/keyboard/keyboard_event.dart';
 import 'package:yc/list/list_main.dart';
+import 'package:yc/login/entrance.dart';
 import 'package:yc/net/dio_lib_demo.dart';
 import 'package:yc/redux/redux_demo.dart';
 import 'package:yc/redux/redux_state.dart';
@@ -238,7 +239,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialPageRoute(builder: (context) => ReduxDemo(store)));
             }, 
               textColor: Colors.lightBlue,
-              child: Text('Redux Demo'))
+              child: Text('Redux Demo')),
+            FlatButton(onPressed: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => EntrancePage()));
+            }, 
+              textColor: Colors.lightBlue,
+              child: Text('State Select Demo'))
           ],
         ),
     );
