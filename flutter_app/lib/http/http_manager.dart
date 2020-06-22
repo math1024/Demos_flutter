@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:yc/http/http_api.dart';
+import 'package:yc/http/http_log_interceptor.dart';
+import 'package:yc/http/http_response_interceptor.dart';
 import 'package:yc/http/http_result_data.dart';
 
 class HttpManager {
@@ -20,8 +22,8 @@ class HttpManager {
         receiveTimeout: 3000,
       ));
 
-      // _dio.interceptors.add(new LogsInterceptors());
-      // _dio.interceptors.add(new ResponseInterceptors());
+      _dio.interceptors.add(LogsInterceptors());
+      _dio.interceptors.add(ResponseInterceptors());
     }
   }
 
