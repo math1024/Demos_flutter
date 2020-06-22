@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:yc/net/photo_info.dart';
+import 'package:yc/dio/photo_info.dart';
 
 class DioLibProgress extends StatelessWidget {
   @override

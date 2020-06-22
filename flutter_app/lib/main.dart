@@ -9,7 +9,7 @@ import 'package:yc/jsonconvert/json_convert_demo.dart';
 import 'package:yc/keyboard/keyboard_event.dart';
 import 'package:yc/list/list_main.dart';
 import 'package:yc/login/entrance.dart';
-import 'package:yc/net/dio_lib_demo.dart';
+import 'package:yc/dio/dio_lib_demo.dart';
 import 'package:yc/redux/redux_demo.dart';
 import 'package:yc/redux/redux_state.dart';
 import 'package:yc/text/text_sets.dart';

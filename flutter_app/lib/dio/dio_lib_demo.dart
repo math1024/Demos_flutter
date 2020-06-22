@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-import 'package:yc/net/dio_lib_progress.dart';
+import 'package:yc/dio/dio_lib_progress.dart';
+
 
 class DioLibDemo extends StatelessWidget {
   @override
