@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:yc/button/raised_button_demo.dart';
 import 'package:yc/charts/google_chart.dart';
+import 'package:yc/charts/google_chart_set.dart';
 import 'package:yc/charts/syncfusion_chart.dart';
 import 'package:yc/date/date_time_page.dart';
 import 'package:yc/jsonconvert/json_convert_demo.dart';
@@ -93,161 +94,162 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: ListView(
-          children: <Widget>[
-            Text(
-              'Weclome to Codelabs. ' + wordPair.asPascalCase,
-              textAlign: TextAlign.center,
+        children: <Widget>[
+          Text(
+            'Weclome to Codelabs. ' + wordPair.asPascalCase,
+            textAlign: TextAlign.center,
+          ),
+          RaisedButton(
+            child: Text('Raise button'),
+            onPressed: () {
+              print('click raise button');
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => RaisedButtonSets()));
+            },
+            textColor: Colors.greenAccent,
+            color: Colors.grey,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
             ),
-            RaisedButton(
-              child: Text('Raise button'),
+          ),
+          RaisedButton(
+            child: Text('list'),
+            onPressed: () {
+              print('click list button');
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ListDemoMain()));
+            },
+            textColor: Colors.greenAccent,
+            color: Colors.grey,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          RaisedButton(
+            child: Text('syncfusion flutter charts'),
+            onPressed: () {
+              print('click syncfusion flutter chart button');
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SyncFusionChart()));
+            },
+            textColor: Colors.greenAccent,
+            color: Colors.grey,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          RaisedButton(
+            child: Text('goolge offical charts'),
+            onPressed: () {
+              print('click goolge offical charts button');
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => GoogleChartSet()));
+            },
+            textColor: Colors.greenAccent,
+            color: Colors.grey,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          RaisedButton(
+            child: Text('Text Set'),
+            onPressed: () {
+              print('click Text Set button');
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => TextSets()));
+            },
+            textColor: Colors.greenAccent,
+            color: Colors.grey,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          RaisedButton(
+            child: Text('Date Time Picker'),
+            onPressed: () {
+              print('click Date Time Picker button');
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DateAndTimerPicker()));
+            },
+            textColor: Colors.greenAccent,
+            color: Colors.grey,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          RaisedButton(
+            child: Text('Dio Demo'),
+            onPressed: () {
+              print('click Dio Demo button');
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DioLibDemo()));
+            },
+            textColor: Colors.greenAccent,
+            color: Colors.orange,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          RaisedButton(
+            child: Text('Json Convert Demo'),
+            onPressed: () {
+              print('click Json Convert Demo button');
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => JsonConvertDemo()));
+            },
+            textColor: Colors.greenAccent,
+            color: Colors.orange,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          RaisedButton(
+            child: Text('Keyboard Event Demo'),
+            onPressed: () {
+              print('click Keyboard Event Demo button');
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => KeyboardEventDemo()));
+            },
+            textColor: Colors.greenAccent,
+            color: Colors.orange,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          RaisedButton(
+            child: Text('Toast Demo'),
+            onPressed: () {
+              print('click Toast Demo button');
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ToastDemo()));
+            },
+            textColor: Colors.greenAccent,
+            color: Colors.orange,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          FlatButton(
               onPressed: () {
-                print('click raise button');
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => RaisedButtonSets()));
-              },
-              textColor: Colors.greenAccent,
-              color: Colors.grey,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25),
-              ),
-            ),
-            RaisedButton(
-              child: Text('list'),
-              onPressed: () {
-                print('click list button');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ListDemoMain()));
-              },
-              textColor: Colors.greenAccent,
-              color: Colors.grey,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25),
-              ),
-            ),
-            RaisedButton(
-              child: Text('syncfusion flutter charts'),
-              onPressed: () {
-                print('click syncfusion flutter chart button');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SyncFusionChart()));
-              },
-              textColor: Colors.greenAccent,
-              color: Colors.grey,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25),
-              ),
-            ),
-            RaisedButton(
-              child: Text('goolge offical charts'),
-              onPressed: () {
-                print('click goolge offical charts button');
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => GoogleChart.withSampleData()));
-              },
-              textColor: Colors.greenAccent,
-              color: Colors.grey,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25),
-              ),
-            ),
-            RaisedButton(
-              child: Text('Text Set'),
-              onPressed: () {
-                print('click Text Set button');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => TextSets()));
-              },
-              textColor: Colors.greenAccent,
-              color: Colors.grey,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25),
-              ),
-            ),
-            RaisedButton(
-              child: Text('Date Time Picker'),
-              onPressed: () {
-                print('click Date Time Picker button');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DateAndTimerPicker()));
-              },
-              textColor: Colors.greenAccent,
-              color: Colors.grey,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25),
-              ),
-            ),
-            RaisedButton(
-              child: Text('Dio Demo'),
-              onPressed: () {
-                print('click Dio Demo button');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DioLibDemo()));
-              },
-              textColor: Colors.greenAccent,
-              color: Colors.orange,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25),
-              ),
-            ),
-            RaisedButton(
-              child: Text('Json Convert Demo'),
-              onPressed: () {
-                print('click Json Convert Demo button');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => JsonConvertDemo()));
-              },
-              textColor: Colors.greenAccent,
-              color: Colors.orange,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25),
-              ),
-            ),
-            RaisedButton(
-              child: Text('Keyboard Event Demo'),
-              onPressed: () {
-                print('click Keyboard Event Demo button');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => KeyboardEventDemo()));
-              },
-              textColor: Colors.greenAccent,
-              color: Colors.orange,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25),
-              ),
-            ),
-            RaisedButton(
-              child: Text('Toast Demo'),
-              onPressed: () {
-                print('click Toast Demo button');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ToastDemo()));
-              },
-              textColor: Colors.greenAccent,
-              color: Colors.orange,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25),
-              ),
-            ),
-            FlatButton(onPressed: (){
                 print('click Redux Demo button');
-                final store = Store<ReduxState>(getReduce,initialState: ReduxState.initState());
+                final store = Store<ReduxState>(getReduce,
+                    initialState: ReduxState.initState());
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ReduxDemo(store)));
-            }, 
+              },
               textColor: Colors.lightBlue,
               child: Text('Redux Demo')),
-            FlatButton(onPressed: (){
+          FlatButton(
+              onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => EntrancePage()));
-            }, 
+              },
               textColor: Colors.lightBlue,
               child: Text('State Select Demo'))
-          ],
-        ),
+        ],
+      ),
     );
   }
 }
