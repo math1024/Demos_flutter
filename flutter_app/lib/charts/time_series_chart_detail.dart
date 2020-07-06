@@ -29,6 +29,8 @@ class TimeSeriesChartDetail extends StatelessWidget {
               position: charts.BehaviorPosition.top,
               cellPadding: new EdgeInsets.only(right: 4.0, bottom: 4.0),
             ),
+            // move center point
+            charts.SlidingViewport(),
             // zoom
             charts.PanAndZoomBehavior(),
             // auxiliary line
@@ -49,7 +51,10 @@ class TimeSeriesChartDetail extends StatelessWidget {
       new TimeSeriesEvents(new DateTime(2017, 9, 19), 5),
       new TimeSeriesEvents(new DateTime(2017, 9, 26), 25),
       new TimeSeriesEvents(new DateTime(2017, 10, 3), 100),
-      new TimeSeriesEvents(new DateTime(2017, 10, 10), 75),
+      new TimeSeriesEvents(new DateTime(2017, 10, 10), 275),
+      new TimeSeriesEvents(new DateTime(2017, 11, 10), 375),
+      new TimeSeriesEvents(new DateTime(2017, 12, 10), 175),
+      new TimeSeriesEvents(new DateTime(2018, 1, 10), 75),
     ];
 
     return [

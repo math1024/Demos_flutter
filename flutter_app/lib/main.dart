@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:yc/button/raised_button_demo.dart';
 import 'package:yc/charts/google_chart.dart';
-import 'package:yc/charts/google_chart_set.dart';
+import 'package:yc/charts/chart_set.dart';
+import 'package:yc/charts/sync_fusion_chart.set.dart';
 import 'package:yc/charts/syncfusion_chart.dart';
 import 'package:yc/date/date_time_page.dart';
 import 'package:yc/jsonconvert/json_convert_demo.dart';
@@ -129,8 +130,10 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Text('syncfusion flutter charts'),
             onPressed: () {
               print('click syncfusion flutter chart button');
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SyncFusionChart()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SyncFusionChartSet()));
             },
             textColor: Colors.greenAccent,
             color: Colors.grey,
@@ -143,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               print('click goolge offical charts button');
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => GoogleChartSet()));
+                  MaterialPageRoute(builder: (context) => ChartSets()));
             },
             textColor: Colors.greenAccent,
             color: Colors.grey,

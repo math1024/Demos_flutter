@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:yc/charts/google_chart.dart';
 import 'package:yc/charts/time_series_chart_detail.dart';
 
-class GoogleChartSet extends StatelessWidget {
+/// bar \line chatrt
+/// chart.\Chart title
+///
+class ChartSets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
