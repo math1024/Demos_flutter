@@ -2,6 +2,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:yc/button/raised_button_demo.dart';
+import 'package:yc/callback/custom_widget_callback.dart';
 import 'package:yc/charts/google_chart.dart';
 import 'package:yc/charts/chart_set.dart';
 import 'package:yc/charts/sync_fusion_chart.set.dart';
@@ -250,7 +251,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialPageRoute(builder: (context) => EntrancePage()));
               },
               textColor: Colors.lightBlue,
-              child: Text('State Select Demo'))
+              child: Text('State Select Demo')),
+          MaterialButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => CustomWidgetCallbackDemo()));
+              },
+              textColor: Colors.lightBlue,
+              child: Text('CustomWidgetCallbackDemo'))
         ],
       ),
     );
