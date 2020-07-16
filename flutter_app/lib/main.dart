@@ -1,25 +1,24 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:redux/redux.dart';
 import 'package:yc/button/raised_button_demo.dart';
 import 'package:yc/callback/custom_widget_callback.dart';
-import 'package:yc/charts/google_chart.dart';
 import 'package:yc/charts/chart_set.dart';
 import 'package:yc/charts/sync_fusion_chart.set.dart';
-import 'package:yc/charts/syncfusion_chart.dart';
 import 'package:yc/date/date_time_page.dart';
+import 'package:yc/dio/dio_lib_demo.dart';
+import 'package:yc/dropmenu/drop_menu_select.dart';
 import 'package:yc/jsonconvert/json_convert_demo.dart';
 import 'package:yc/keyboard/keyboard_event.dart';
 import 'package:yc/list/list_main.dart';
 import 'package:yc/login/entrance.dart';
-import 'package:yc/dio/dio_lib_demo.dart';
 import 'package:yc/redux/redux_demo.dart';
 import 'package:yc/redux/redux_state.dart';
 import 'package:yc/rowcolumn/column_demo.dart';
 import 'package:yc/rowcolumn/row_demo.dart';
 import 'package:yc/text/text_sets.dart';
 import 'package:yc/toast/toast_demo.dart';
-import 'package:redux/redux.dart';
 
 void main() {
   debugPaintSizeEnabled = !true;
@@ -276,7 +275,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialPageRoute(builder: (context) => ColumnDemo()));
               },
               textColor: Colors.lightBlue,
-              child: Text('ColumnDemo'))
+              child: Text('ColumnDemo')),
+          RaisedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => DropMenuSelect()));
+              },
+              textColor: Colors.lightBlue,
+              child: Text('DropMenuSelectorDemo')),
         ],
       ),
     );
