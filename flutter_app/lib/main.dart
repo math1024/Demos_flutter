@@ -15,6 +15,8 @@ import 'package:yc/login/entrance.dart';
 import 'package:yc/dio/dio_lib_demo.dart';
 import 'package:yc/redux/redux_demo.dart';
 import 'package:yc/redux/redux_state.dart';
+import 'package:yc/rowcolumn/column_demo.dart';
+import 'package:yc/rowcolumn/row_demo.dart';
 import 'package:yc/text/text_sets.dart';
 import 'package:yc/toast/toast_demo.dart';
 import 'package:redux/redux.dart';
@@ -260,7 +262,21 @@ class _MyHomePageState extends State<MyHomePage> {
                         builder: (context) => CustomWidgetCallbackDemo()));
               },
               textColor: Colors.lightBlue,
-              child: Text('CustomWidgetCallbackDemo'))
+              child: Text('CustomWidgetCallbackDemo')),
+          MaterialButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => RowDemo()));
+              },
+              textColor: Colors.lightBlue,
+              child: Text('RowDemo')),
+          MaterialButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ColumnDemo()));
+              },
+              textColor: Colors.lightBlue,
+              child: Text('ColumnDemo'))
         ],
       ),
     );
