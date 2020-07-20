@@ -41,6 +41,8 @@ dependencies:
   json_annotation: ^3.0.0
   # dropdown menu
   searchable_dropdown: ^1.1.3
+  # multi 
+  flutter_multi_chip_select: ^0.1.0
 
 dev_dependencies:
   flutter_test:

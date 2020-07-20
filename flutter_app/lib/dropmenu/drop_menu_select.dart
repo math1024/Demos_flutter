@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_multi_chip_select/flutter_multi_chip_select.dart';
 import 'package:searchable_dropdown/searchable_dropdown.dart';
 
 class DropMenuSelect extends StatefulWidget {
@@ -7,6 +8,8 @@ class DropMenuSelect extends StatefulWidget {
 }
 
 class _DropMenuSelectState extends State<DropMenuSelect> {
+  final multiSelectKey = GlobalKey<MultiSelectDropdownState>();
+  var menuItems = [1, 2, 3, 4, 5, 6];
   var _text = 'flat';
   @override
   Widget build(BuildContext context) {
@@ -58,9 +61,11 @@ class _DropMenuSelectState extends State<DropMenuSelect> {
               });
             },
             closeButton: (selectedItems) {
-              return (selectedItems.isNotEmpty
+              var res = (selectedItems.isNotEmpty
                   ? "Save ${selectedItems.length == 1 ? '"' + items[selectedItems.first].value.toString() + '"' : '(' + selectedItems.length.toString() + ')'}"
                   : "Save without selection");
+
+              return res;
             },
             isExpanded: false,
           ),
@@ -78,6 +83,30 @@ class _DropMenuSelectState extends State<DropMenuSelect> {
             isExpanded: false,
             menuConstraints: BoxConstraints.tight(Size.fromHeight(200)),
           ),
+          FlutterMultiChipSelect(
+            key: multiSelectKey,
+            elements: List.generate(
+              menuItems.length,
+              (index) => MultiSelectItem<String>.simple(
+                  actions: [
+                    IconButton(
+                      icon: Icon(Icons.delete),
+                      onPressed: () {
+                        setState(() {
+                          menuItems.remove(menuItems[index]);
+                        });
+                        print("Delete Call at: " + menuItems[index].toString());
+                      },
+                    )
+                  ],
+                  title: "Item " + menuItems[index].toString(),
+                  value: menuItems[index].toString()),
+            ),
+            label: "Dropdown Select",
+            values: [
+              1, 2 // Pass Initial value array or leave empty array.
+            ],
+          )
         ]));
   }
 }
