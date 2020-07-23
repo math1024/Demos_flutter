@@ -1,6 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:provider/provider.dart';
 import 'package:redux/redux.dart';
 import 'package:yc/button/raised_button_demo.dart';
 import 'package:yc/callback/custom_widget_callback.dart';
@@ -18,31 +19,59 @@ import 'package:yc/redux/redux_state.dart';
 import 'package:yc/rowcolumn/column_demo.dart';
 import 'package:yc/rowcolumn/row_demo.dart';
 import 'package:yc/text/text_sets.dart';
+import 'package:yc/theme/theme_notify.dart';
 import 'package:yc/toast/toast_demo.dart';
 
 void main() {
   debugPaintSizeEnabled = !true;
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider<ThemeNotify>(
+      create: (_) => ThemeNotify(darkTheme),
+      child: MyApp(),
+    ),
+  );
 }
+
+final darkTheme = ThemeData(
+  primarySwatch: Colors.grey,
+  primaryColor: Colors.black,
+  brightness: Brightness.dark,
+  backgroundColor: const Color(0xFF212121),
+  accentColor: Colors.white,
+  accentIconTheme: IconThemeData(color: Colors.black),
+  dividerColor: Colors.black12,
+);
+
+final lightTheme = ThemeData(
+  primarySwatch: Colors.grey,
+  primaryColor: Colors.white,
+  brightness: Brightness.light,
+  backgroundColor: const Color(0xFFE5E5E5),
+  accentColor: Colors.black,
+  accentIconTheme: IconThemeData(color: Colors.white),
+  dividerColor: Colors.white54,
+);
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotify>(context);
     return MaterialApp(
       title: 'Weclome Flutter Codelabs',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
+      theme: themeNotifier.getTheme(),
+      // theme: ThemeData(
+      //   // This is the theme of your application.
+      //   //
+      //   // Try running your application with "flutter run". You'll see the
+      //   // application has a blue toolbar. Then, without quitting the app, try
+      //   // changing the primarySwatch below to Colors.green and then invoke
+      //   // "hot reload" (press "r" in the console where you ran "flutter run",
+      //   // or simply save your changes to "hot reload" in a Flutter IDE).
+      //   // Notice that the counter didn't reset back to zero; the application
+      //   // is not restarted.
+      //   primarySwatch: Colors.blue,
+      // ),
       home: MyHomePage(title: 'Flutter Codelab Home Page'),
     );
   }
@@ -67,8 +96,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool isDartTheme = true;
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotify>(context);
     final wordPair = WordPair.random();
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
@@ -94,6 +125,16 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 debugPrint('action button');
               }),
+          Switch(
+              value: isDartTheme,
+              onChanged: (value) {
+                isDartTheme = value;
+                if (value) {
+                  themeNotifier.setTheme(darkTheme);
+                } else {
+                  themeNotifier.setTheme(lightTheme);
+                }
+              })
         ],
       ),
       body: ListView(
