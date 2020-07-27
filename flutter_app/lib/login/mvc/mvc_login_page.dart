@@ -66,7 +66,7 @@ class _MvcLoginPageState extends State<MvcLoginPage> {
     return Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        '登录',
+        '登录1',
         style: TextStyle(fontSize: 24.0),
       ),
     );
