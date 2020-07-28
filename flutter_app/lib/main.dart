@@ -9,6 +9,7 @@ import 'package:yc/charts/chart_set.dart';
 import 'package:yc/charts/sync_fusion_chart.set.dart';
 import 'package:yc/date/date_time_page.dart';
 import 'package:yc/dio/dio_lib_demo.dart';
+import 'package:yc/driver/list_test_driver.dart';
 import 'package:yc/dropmenu/drop_menu_select.dart';
 import 'package:yc/jsonconvert/json_convert_demo.dart';
 import 'package:yc/keyboard/keyboard_event.dart';
@@ -324,6 +325,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               textColor: Colors.lightBlue,
               child: Text('DropMenuSelectorDemo')),
+          Center(
+              child: InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => (ListForDriver())));
+            },
+            child: Text('Test Driver'),
+          )),
         ],
       ),
     );
