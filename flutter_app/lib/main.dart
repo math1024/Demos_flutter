@@ -22,9 +22,14 @@ import 'package:yc/rowcolumn/row_demo.dart';
 import 'package:yc/text/text_sets.dart';
 import 'package:yc/theme/theme_notify.dart';
 import 'package:yc/toast/toast_demo.dart';
+import 'dart:developer' as developer;
 
 void main() {
   debugPaintSizeEnabled = !true;
+  developer.log('log me', level: 1, name: 'my.app.category');
+
+  developer.log('log me 1', name: 'my.other.category');
+  developer.log('log me 2', name: 'my.other.category');
   runApp(
     ChangeNotifierProvider<ThemeNotify>(
       create: (_) => ThemeNotify(darkTheme),
