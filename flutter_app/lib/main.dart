@@ -11,6 +11,7 @@ import 'package:yc/date/date_time_page.dart';
 import 'package:yc/dio/dio_lib_demo.dart';
 import 'package:yc/driver/list_test_driver.dart';
 import 'package:yc/dropmenu/drop_menu_select.dart';
+import 'package:yc/interview/interview_demo.dart';
 import 'package:yc/jsonconvert/json_convert_demo.dart';
 import 'package:yc/keyboard/keyboard_event.dart';
 import 'package:yc/list/list_main.dart';
@@ -338,6 +339,13 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             child: Text('Test Driver'),
           )),
+          RaisedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => InterViewDemo()));
+              },
+              textColor: Colors.lightBlue,
+              child: Text('Interactive')),
         ],
       ),
     );
