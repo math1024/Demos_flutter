@@ -15,6 +15,7 @@ import 'package:yc/interview/interview_demo.dart';
 import 'package:yc/jsonconvert/json_convert_demo.dart';
 import 'package:yc/keyboard/keyboard_event.dart';
 import 'package:yc/list/list_main.dart';
+import 'package:yc/list/smart_select.dart';
 import 'package:yc/login/entrance.dart';
 import 'package:yc/redux/redux_demo.dart';
 import 'package:yc/redux/redux_state.dart';
@@ -346,6 +347,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               textColor: Colors.lightBlue,
               child: Text('Interactive')),
+
+          RaisedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SmartSelectDemo()));
+              },
+              textColor: Colors.lightBlue,
+              child: Text('SmartSelect')),
         ],
       ),
     );
