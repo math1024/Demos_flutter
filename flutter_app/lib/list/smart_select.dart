@@ -13,6 +13,15 @@ class _SmartSelectDemoState extends State<SmartSelectDemo> {
     SmartSelectOption<int>(value: 1, title: 'Ionic'),
     SmartSelectOption<int>(value: 2, title: 'Flutter'),
     SmartSelectOption<int>(value: 3, title: 'React Native'),
+    SmartSelectOption<int>(value: 11, title: 'Ionic'),
+    SmartSelectOption<int>(value: 12, title: 'Flutter'),
+    SmartSelectOption<int>(value: 13, title: 'React Native'),
+    SmartSelectOption<int>(value: 21, title: 'Ionic'),
+    SmartSelectOption<int>(value: 22, title: 'Flutter'),
+    SmartSelectOption<int>(value: 23, title: 'React Native'),
+    SmartSelectOption<int>(value: 31, title: 'Ionic'),
+    SmartSelectOption<int>(value: 32, title: 'Flutter'),
+    SmartSelectOption<int>(value: 33, title: 'React Native'),
   ];
   @override
   Widget build(BuildContext context) {
