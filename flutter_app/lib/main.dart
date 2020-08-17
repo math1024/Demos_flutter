@@ -1,3 +1,4 @@
+import 'package:amap_all_fluttify/amap_all_fluttify.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -17,6 +18,7 @@ import 'package:yc/keyboard/keyboard_event.dart';
 import 'package:yc/list/list_main.dart';
 import 'package:yc/list/smart_select.dart';
 import 'package:yc/login/entrance.dart';
+import 'package:yc/map/amap_demo.dart';
 import 'package:yc/redux/redux_demo.dart';
 import 'package:yc/redux/redux_state.dart';
 import 'package:yc/rowcolumn/column_demo.dart';
@@ -37,6 +39,12 @@ void main() {
       create: (_) => ThemeNotify(darkTheme),
       child: MyApp(),
     ),
+  );
+
+  enableFluttifyLog(false);
+  AmapService.init(
+    iosKey: '9c670a93b3258effc90bfc9c9fabf12f',
+    androidKey: '344e6ec7f376d744dc731e293c7a8459',
   );
 }
 
@@ -347,7 +355,6 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               textColor: Colors.lightBlue,
               child: Text('Interactive')),
-
           RaisedButton(
               onPressed: () {
                 Navigator.push(context,
@@ -355,6 +362,13 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               textColor: Colors.lightBlue,
               child: Text('SmartSelect')),
+          RaisedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AmapDemo()));
+              },
+              textColor: Colors.lightGreen,
+              child: Text('Amap Demo'))
         ],
       ),
     );
