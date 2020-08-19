@@ -48,6 +48,7 @@ dependencies:
 
   smart_select: ^3.0.3
 
+  # amap_base: ^0.4.0
   # amap_base_map: ^0.4.4 #仅地图
   # amap_base_search: ^0.4.1 # 仅搜索
   # amap_base_location: ^0.4.0 # 仅定位

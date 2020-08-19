@@ -15,6 +15,7 @@ import 'package:yc/dropmenu/drop_menu_select.dart';
 import 'package:yc/interview/interview_demo.dart';
 import 'package:yc/jsonconvert/json_convert_demo.dart';
 import 'package:yc/keyboard/keyboard_event.dart';
+import 'package:yc/list/expand_list_demo.dart';
 import 'package:yc/list/list_main.dart';
 import 'package:yc/list/smart_select.dart';
 import 'package:yc/login/entrance.dart';
@@ -368,7 +369,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialPageRoute(builder: (context) => AmapDemo()));
               },
               textColor: Colors.lightGreen,
-              child: Text('Amap Demo'))
+              child: Text('Amap Demo')),
+          RaisedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ExpandListDemo()));
+              },
+              textColor: Colors.lightGreen,
+              child: Text('ExpansionTile')),
         ],
       ),
     );
