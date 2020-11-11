@@ -1,4 +1,4 @@
-import 'package:amap_all_fluttify/amap_all_fluttify.dart';
+// import 'package:amap_all_fluttify/amap_all_fluttify.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -19,7 +19,6 @@ import 'package:yc/list/expand_list_demo.dart';
 import 'package:yc/list/list_main.dart';
 import 'package:yc/list/smart_select.dart';
 import 'package:yc/login/entrance.dart';
-import 'package:yc/map/amap_demo.dart';
 import 'package:yc/redux/redux_demo.dart';
 import 'package:yc/redux/redux_state.dart';
 import 'package:yc/rowcolumn/column_demo.dart';
@@ -42,11 +41,11 @@ void main() {
     ),
   );
 
-  enableFluttifyLog(false);
-  AmapService.init(
-    iosKey: '9c670a93b3258effc90bfc9c9fabf12f',
-    androidKey: '344e6ec7f376d744dc731e293c7a8459',
-  );
+  // enableFluttifyLog(false);
+  // AmapService.init(
+  //   iosKey: '9c670a93b3258effc90bfc9c9fabf12f',
+  //   androidKey: '344e6ec7f376d744dc731e293c7a8459',
+  // );
 }
 
 final darkTheme = ThemeData(
@@ -365,8 +364,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('SmartSelect')),
           RaisedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AmapDemo()));
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => AmapDemo()));
               },
               textColor: Colors.lightGreen,
               child: Text('Amap Demo')),

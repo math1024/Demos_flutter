@@ -22,6 +22,9 @@ class ExpandListDemo extends StatelessWidget {
           ExpansionTile(
               title: const Text('Sublist2'),
               trailing: Icon(Icons.account_balance),
+              onExpansionChanged: (value) {
+                print(value);
+              },
               backgroundColor: Theme.of(context).accentColor.withOpacity(0.025),
               children: const <Widget>[
                 ListTile(title: Text('One')),
@@ -29,6 +32,26 @@ class ExpandListDemo extends StatelessWidget {
                 ListTile(title: Text('Free')),
                 ListTile(title: Text('Four'))
               ]),
+          ExpansionPanelList(
+            children: [
+              ExpansionPanel(
+                  headerBuilder: (BuildContext context, bool isExpanded) {
+                    return Container(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                        'Panel A',
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                    );
+                  },
+                  body: Container(
+                    padding: EdgeInsets.all(16.0),
+                    width: double.infinity,
+                    child: Text('Content for Panel A.'),
+                  ),
+                  isExpanded: true),
+            ],
+          )
         ],
       ),
     );
